@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -e
+
+YEAR=2024
+
+ROOT_DIR="$(dirname "$(dirname "$(readlink -f "$0")")")"
+
+day="$1"
+
+out_file="$ROOT_DIR/data/inputs/${day}"
+
+>&2 printf "fetching input for day %d...\n" "$day"
+
+curl -s "https://adventofcode.com/${YEAR}/day/${day}/input" \
+	-H "Cookie: session=$AOC_SESSION" \
+	-o "$out_file" \
+	|| exit 1
+
+echo "$out_file"

@@ -1,0 +1,6 @@
+/data/inputs/**
+!/data/inputs/.gitkeep
+
+/.env
+
+/.gem_rbs_collection/**
