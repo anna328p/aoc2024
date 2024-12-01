@@ -1,7 +1,10 @@
 { flakes
 , stdenv
 , lib
-,
+, hyperfine
+, valgrind
+, gprof2dot
+, graphviz
 }:
 
 stdenv.mkDerivation {
@@ -9,7 +12,10 @@ stdenv.mkDerivation {
 	version = "0";
 
 	nativeBuildInputs = [
-
+		hyperfine
+		valgrind
+		gprof2dot
+		graphviz
 	];
 
 	buildInputs = [

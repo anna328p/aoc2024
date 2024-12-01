@@ -4,3 +4,5 @@
 /.env
 
 /.gem_rbs_collection/**
+
+.ccls-cache/**
