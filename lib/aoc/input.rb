@@ -5,7 +5,7 @@ require 'pathname'
 module AoC
   module Input
     def self.read(day)
-      input_path = Pathname.new("#{__dir__}/../../data/inputs/#{day}.txt").cleanpath
+      input_path = Pathname.new("#{__dir__}/../../data/inputs/#{day}").cleanpath
 
       File.read(input_path.to_s)
     end
