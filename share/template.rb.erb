@@ -20,7 +20,7 @@ module Day<%= day %>
   end
 end
 
-if (input_filename = ARGV[1])
+if (input_filename = ARGV[0])
   Day<%= day %>.run(input_filename)
 else
   Day<%= day %>.run

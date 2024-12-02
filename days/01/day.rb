@@ -22,7 +22,7 @@ module Day1
   end
 end
 
-if (input_filename = ARGV[1])
+if (input_filename = ARGV[0])
   Day1.run(input_filename)
 else
   Day1.run
