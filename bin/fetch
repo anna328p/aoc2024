@@ -17,4 +17,10 @@ curl -s "https://adventofcode.com/${YEAR}/day/${day}/input" \
 	-o "$out_file" \
 	|| exit 1
 
+if ( cmp -s "$out_file" "$ROOT_DIR/share/missing_input.txt" ); then
+	>&2 printf "error: input for day %d has not yet unlocked\n" "$day"
+	rm "$out_file"
+	exit 1
+fi
+
 echo "$out_file"
