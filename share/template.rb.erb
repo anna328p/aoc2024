@@ -1,0 +1,27 @@
+# frozen_string_literal: true
+
+require 'aoc'
+
+module Day<%= day %>
+  extend AoC::Solution
+
+  def self.day = <%= day %>
+
+  def self.parse(input)
+
+  end
+
+  def self.one(parsed)
+
+  end
+
+  def self.two(parsed)
+
+  end
+end
+
+if (input_filename = ARGV[1])
+  Day<%= day %>.run(input_filename)
+else
+  Day<%= day %>.run
+end

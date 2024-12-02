@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+day=$1
+day_padded=$(printf "%02d" "$day")
+shift
+
+exec ruby "days/$day_padded/day.rb" "$@"

@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require 'erb'
+require 'pathname'
+
+day = ARGV[0].to_i
+
+root = Pathname.new(__dir__).parent
+
+template_path = root.join('share', 'template.rb.erb')
+
+out_path = root.join('days', format('%02d', day), 'day.rb')
+
+if out_path.exist?
+  warn "error: already exists: #{out_path}"
+  exit 1
+end
+
+templated = ERB.new(template_path.read).result(binding)
+out_path.write(templated)
+
+puts out_path
