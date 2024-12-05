@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 
+ROOT_DIR="$(dirname "$(dirname "$(readlink -f "$0")")")"
+
 day=$1
 day_padded=$(printf "%02d" "$day")
 shift
 
-exec ruby "days/$day_padded/day.rb" "$@"
+exec ruby "$ROOT_DIR/days/$day_padded/day.rb" "$@"
