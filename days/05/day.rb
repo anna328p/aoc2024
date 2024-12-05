@@ -59,12 +59,22 @@ return stack + remaining_values if remaining_values.size == 1 && graph[stack.las
   end
 
   # WARNING: incredibly slow, 4m13s on my laptop
-  def self.two((rules, updates))
+  def self.two_((rules, updates))
     maps = mk_maps(rules)
 
     mismatched = updates.reject { |u| predicate(maps, u) }
 
     res = mismatched.map { |u| dfs(maps, u) }
+
+    res.sum { |u| u[u.size / 2] }
+  end
+
+  def self.two((rules, updates))
+    maps = mk_maps(rules)
+
+    mismatched = updates.reject { |u| predicate(maps, u) }
+
+    res = mismatched.map { |u| u.sort { |a, b| maps[a].include?(b) ? 1 : -1 } }
 
     res.sum { |u| u[u.size / 2] }
   end
