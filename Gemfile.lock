@@ -63,6 +63,7 @@ GEM
       ast (~> 2.4.1)
       racc
     pathname (0.4.0)
+    pqueue (2.1.0)
     racc (1.8.1)
     rainbow (3.1.1)
     rb-fsevent (0.11.2)
@@ -141,6 +142,7 @@ PLATFORMS
 
 DEPENDENCIES
   pathname
+  pqueue
   rubocop
   solargraph
   steep

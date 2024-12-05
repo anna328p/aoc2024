@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # gem 'TODO'
 gem 'pathname'
+gem 'pqueue'
 
 group :development do
   gem 'rubocop'
